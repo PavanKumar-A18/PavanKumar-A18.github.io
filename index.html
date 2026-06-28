@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pavan Kumar A — IT Professional · Munich</title>
+  <meta name="description" content="IT professional specialising in PMO, portfolio management, GRC and AI governance. Based in Munich." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --linen:#F5F0E8;--sand:#E8DFC8;--beige:#D4C5A9;
+      --monstera:#7C9A6E;--monstera-dk:#5A7A50;--clay:#B8906A;
+      --earth:#3B2F1E;--earth-mid:#5C5043;--earth-lt:#7A6E5F;
+      --white:#FFFFFF;--saffron:#E8861A;--saffron-lt:#FDF3E7;
+      --gold:#C9A84C;--gold-lt:#FDF8EC;
+      --ff-display:'Playfair Display',Georgia,serif;
+      --ff-body:'DM Sans',system-ui,sans-serif;
+      --nav-h:64px;--max-w:1080px;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:24px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;font-size:16px;}
+    body{background:var(--linen);color:var(--earth);font-family:var(--ff-body);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+    ul{list-style:none;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(245,240,232,0.93);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--beige);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;}
+    .nav-logo{font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--earth);}
+    .nav-logo span{color:var(--monstera);}
+    .nav-links{display:flex;gap:1.5rem;align-items:center;}
+    .nav-links a{font-size:0.78rem;font-weight:500;color:var(--earth-lt);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--monstera);}
+    .nav-cta{background:var(--monstera)!important;color:var(--white)!important;padding:7px 16px;border-radius:20px;font-size:0.78rem!important;}
+    .nav-cta:hover{background:var(--monstera-dk)!important;}
+
+    /* LAYOUT */
+    .container{max-width:var(--max-w);margin:0 auto;padding:0 2rem;}
+    section{padding:6rem 0;}
+    .section-eyebrow{font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--monstera);margin-bottom:0.75rem;}
+    .section-title{font-family:var(--ff-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;color:var(--earth);line-height:1.15;margin-bottom:1.25rem;}
+    .section-body{font-size:1rem;color:var(--earth-mid);max-width:580px;line-height:1.8;}
+
+    /* HERO */
+    #hero{min-height:100vh;display:flex;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden;}
+    .hero-bg-leaf{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:500px;height:500px;opacity:0.07;pointer-events:none;}
+    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%;}
+    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--sand);border:1px solid var(--beige);border-radius:20px;padding:6px 14px;font-size:0.8rem;color:var(--earth-mid);margin-bottom:1.5rem;}
+    .hero-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--monstera);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.6;transform:scale(0.85);}}
+    .hero-name{font-family:var(--ff-display);font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;color:var(--earth);line-height:1.05;margin-bottom:1.25rem;letter-spacing:-0.02em;}
+    .hero-name em{font-style:italic;color:var(--monstera);}
+    .hero-tagline{font-size:1.05rem;color:var(--earth-mid);line-height:1.8;margin-bottom:2rem;max-width:480px;}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+    .btn-primary{background:var(--earth);color:var(--linen);padding:13px 28px;border-radius:30px;font-size:0.9rem;font-weight:500;transition:background 0.2s,transform 0.15s;display:inline-flex;align-items:center;gap:8px;}
+    .btn-primary:hover{background:var(--monstera);transform:translateY(-1px);}
+    .btn-secondary{background:transparent;color:var(--earth);padding:13px 28px;border-radius:30px;border:1.5px solid var(--beige);font-size:0.9rem;font-weight:500;transition:border-color 0.2s,color 0.2s,transform 0.15s;}
+    .btn-secondary:hover{border-color:var(--monstera);color:var(--monstera);transform:translateY(-1px);}
+
+    /* CURRENTLY */
+    .currently-card{background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-lg);padding:2rem;position:relative;}
+    .currently-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--monstera),var(--clay));border-radius:var(--radius-lg) var(--radius-lg) 0 0;}
+    .currently-title{font-family:var(--ff-display);font-size:1rem;font-weight:500;color:var(--earth);margin-bottom:1.5rem;display:flex;align-items:center;gap:8px;}
+    .currently-row{display:flex;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid var(--sand);}
+    .currently-row:last-child{border-bottom:none;}
+    .c-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .bg-green{background:#EAF3E5;}.bg-clay{background:#F5EBE0;}.bg-sand{background:var(--sand);}.bg-blue{background:#E5EEF5;}
+    .c-meta{flex:1;}
+    .c-label{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:2px;}
+    .c-value{font-size:0.9rem;font-weight:500;color:var(--earth);}
+
+    /* ABOUT */
+    #about{background:var(--sand);}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .trait-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2rem;}
+    .trait-card{background:var(--linen);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1.25rem;}
+    .trait-icon{font-size:1.4rem;margin-bottom:8px;}
+    .trait-name{font-size:0.82rem;font-weight:500;color:var(--earth);margin-bottom:4px;}
+    .trait-sub{font-size:0.78rem;color:var(--earth-lt);line-height:1.5;}
+    .lang-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem;}
+    .lang-pill{background:var(--linen);border:1px solid var(--beige);border-radius:20px;padding:5px 13px;font-size:0.78rem;color:var(--earth-mid);}
+    .lang-lv{font-size:0.7rem;color:var(--earth-lt);}
+    .spirit-box{margin-top:2rem;background:var(--saffron-lt);border:1px solid #F5C887;border-left:4px solid var(--saffron);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:1.25rem 1.5rem;font-size:0.88rem;color:var(--earth-mid);line-height:1.7;}
+    .spirit-box strong{color:var(--earth);}
+
+    /* ═══ TIMELINE ═══════════════════════════════════════════ */
+    #journey{background:var(--linen);}
+    .tl-root{margin-top:3rem;position:relative;}
+
+    /* vertical spine */
+    .tl-root::before{content:'';position:absolute;left:22px;top:0;bottom:0;width:2px;background:var(--beige);border-radius:2px;}
+
+    /* ERA DIVIDER */
+    .era{display:flex;align-items:center;gap:1rem;margin:2.5rem 0 1.5rem;position:relative;}
+    .era:first-child{margin-top:0;}
+    .era-badge{font-size:0.68rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:var(--white);background:var(--earth-mid);border-radius:14px;padding:5px 14px;white-space:nowrap;margin-left:48px;flex-shrink:0;}
+    .era-badge.green{background:var(--monstera);}
+    .era-badge.gold{background:var(--clay);}
+    .era-badge.saffron{background:var(--saffron);}
+    .era-line{flex:1;height:1px;background:var(--beige);}
+
+    /* MILESTONE BAND */
+    .milestone-band{margin:0.5rem 0 1.5rem 48px;background:var(--gold-lt);border:1.5px solid var(--gold);border-radius:var(--radius-md);padding:1rem 1.25rem;display:flex;align-items:center;gap:12px;}
+    .milestone-band-icon{font-size:1.6rem;flex-shrink:0;}
+    .milestone-band-text strong{display:block;font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--earth);margin-bottom:2px;}
+    .milestone-band-text span{font-size:0.82rem;color:var(--earth-mid);}
+
+    /* STANDARD CARD ROW */
+    .tl-row{display:grid;grid-template-columns:48px 1fr;gap:1.25rem;margin-bottom:1.25rem;position:relative;}
+
+    /* dot */
+    .tl-dot{width:44px;height:44px;border-radius:50%;background:var(--white);border:2px solid var(--beige);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;position:relative;z-index:1;}
+    .tl-dot.green{border-color:var(--monstera);background:#EAF3E5;}
+    .tl-dot.gold{border-color:var(--clay);background:#F5EBE0;}
+    .tl-dot.now{border-color:var(--monstera);background:var(--monstera);}
+
+    /* card */
+    .tl-card{background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1.25rem 1.5rem;transition:border-color 0.2s,transform 0.18s;}
+    .tl-card:hover{border-color:var(--beige);transform:translateX(3px);}
+    .tl-card.accent{background:linear-gradient(135deg,var(--linen) 0%,#EAF3E5 100%);border-color:var(--monstera);}
+    .tl-card.now-card{border-color:var(--monstera);background:var(--linen);}
+
+    .tl-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:3px;}
+    .tl-role{font-family:var(--ff-display);font-size:1.02rem;font-weight:500;color:var(--earth);}
+    .tl-date{font-size:0.73rem;color:var(--earth-lt);background:var(--sand);padding:3px 10px;border-radius:12px;white-space:nowrap;flex-shrink:0;}
+    .tl-org{font-size:0.84rem;font-weight:500;color:var(--monstera);margin-bottom:0.6rem;}
+    .tl-org.clay{color:var(--clay);}
+    .tl-org.saffron{color:var(--saffron);}
+    .tl-body{font-size:0.85rem;color:var(--earth-mid);line-height:1.65;}
+    .tl-list{padding:0;margin-top:0.4rem;}
+    .tl-list li{font-size:0.85rem;color:var(--earth-mid);line-height:1.65;padding:2px 0 2px 16px;position:relative;}
+    .tl-list li::before{content:'·';position:absolute;left:4px;color:var(--monstera);font-size:1.1rem;line-height:1.5;}
+    .tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem;}
+    .tl-tag{font-size:0.7rem;color:var(--earth-lt);background:var(--linen);border:1px solid var(--sand);padding:3px 10px;border-radius:12px;}
+    .tl-badge{display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:500;padding:3px 10px;border-radius:12px;margin-top:0.5rem;}
+    .badge-gold{background:#FFF3CD;color:#7A5800;border:1px solid #F5C887;}
+    .badge-green{background:#EAF3E5;color:var(--monstera-dk);border:1px solid #B8D9A8;}
+    .badge-clay{background:#F5EBE0;color:#7A4F2A;border:1px solid #D4B08A;}
+
+    /* NESTED MBA BLOCK */
+    .mba-block{background:var(--sand);border:1px solid var(--beige);border-radius:var(--radius-lg);padding:1.5rem;margin-top:1rem;}
+    .mba-block-title{font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px;}
+    .mba-block-title::after{content:'';flex:1;height:1px;background:var(--beige);}
+
+    /* sub-items inside MBA */
+    .sub-row{display:grid;grid-template-columns:36px 1fr;gap:1rem;margin-bottom:1rem;}
+    .sub-row:last-child{margin-bottom:0;}
+    .sub-dot{width:32px;height:32px;border-radius:50%;background:var(--linen);border:1.5px solid var(--beige);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;}
+    .sub-card{background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1rem 1.25rem;}
+    .sub-role{font-size:0.9rem;font-weight:500;color:var(--earth);margin-bottom:2px;}
+    .sub-org{font-size:0.78rem;color:var(--monstera);font-weight:500;margin-bottom:0.4rem;}
+    .sub-body{font-size:0.82rem;color:var(--earth-mid);line-height:1.6;}
+    .sub-date{font-size:0.7rem;color:var(--earth-lt);background:var(--sand);padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:0.4rem;}
+
+    /* PART-TIME GROUP */
+    .parttime-group{background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1rem 1.25rem;margin-bottom:1rem;}
+    .parttime-label{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:0.75rem;}
+    .parttime-items{display:flex;gap:10px;flex-wrap:wrap;}
+    .parttime-pill{background:var(--linen);border:1px solid var(--beige);border-radius:var(--radius-md);padding:0.6rem 1rem;font-size:0.82rem;color:var(--earth-mid);}
+    .parttime-pill strong{display:block;font-size:0.85rem;color:var(--earth);font-weight:500;}
+
+    /* PHOTO UPLOAD ZONE */
+    .photo-upload{margin-top:0.75rem;}
+    .photo-upload-label{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:0.5rem;}
+    .photo-drop{border:1.5px dashed var(--beige);border-radius:var(--radius-md);padding:0.75rem 1rem;display:flex;align-items:center;gap:10px;cursor:pointer;transition:border-color 0.2s,background 0.2s;background:var(--linen);}
+    .photo-drop:hover{border-color:var(--monstera);background:#EAF3E5;}
+    .photo-drop input{display:none;}
+    .photo-drop-icon{font-size:1.1rem;}
+    .photo-drop-text{font-size:0.78rem;color:var(--earth-lt);}
+    .photo-drop-text strong{display:block;font-size:0.82rem;color:var(--earth-mid);}
+    .photo-previews{display:flex;flex-wrap:wrap;gap:8px;margin-top:0.6rem;}
+    .photo-thumb{width:64px;height:64px;border-radius:8px;object-fit:cover;border:1px solid var(--beige);cursor:pointer;}
+    .photo-thumb:hover{border-color:var(--monstera);}
+
+    /* DOC UPLOAD */
+    .doc-upload{margin-top:0.75rem;}
+    .doc-drop{border:1.5px dashed var(--beige);border-radius:var(--radius-md);padding:0.75rem 1rem;display:flex;align-items:center;gap:10px;cursor:pointer;transition:border-color 0.2s,background 0.2s;background:var(--linen);}
+    .doc-drop:hover{border-color:var(--clay);background:#F5EBE0;}
+    .doc-drop input{display:none;}
+    .doc-drop-icon{font-size:1.1rem;}
+    .doc-drop-text{font-size:0.78rem;color:var(--earth-lt);}
+    .doc-drop-text strong{display:block;font-size:0.82rem;color:var(--earth-mid);}
+    .doc-list{margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:8px;}
+    .doc-pill{background:var(--white);border:1px solid var(--beige);border-radius:10px;padding:4px 12px;font-size:0.75rem;color:var(--earth-mid);display:flex;align-items:center;gap:6px;cursor:pointer;}
+    .doc-pill:hover{border-color:var(--clay);}
+
+    /* LIGHTBOX */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(20,14,6,0.92);z-index:500;align-items:center;justify-content:center;padding:2rem;}
+    .lightbox.open{display:flex;}
+    .lightbox img{max-width:90vw;max-height:85vh;border-radius:var(--radius-md);object-fit:contain;}
+    .lb-close{position:fixed;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:white;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;}
+
+    /* TRAVEL GALLERY OVERLAY */
+    #travel-gallery{display:none;position:fixed;inset:0;background:var(--earth);z-index:200;overflow-y:auto;}
+    #travel-gallery.open{display:block;}
+    .gal-nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 2rem;border-bottom:1px solid rgba(255,255,255,0.1);position:sticky;top:0;background:var(--earth);z-index:10;}
+    .gal-title{font-family:var(--ff-display);font-size:1.2rem;color:var(--linen);}
+    .gal-close{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:var(--linen);padding:8px 18px;border-radius:20px;font-size:0.85rem;cursor:pointer;font-family:var(--ff-body);transition:background 0.2s;}
+    .gal-close:hover{background:rgba(255,255,255,0.18);}
+    .gal-inner{max-width:960px;margin:0 auto;padding:3rem 2rem;}
+    .gal-intro{font-size:1rem;color:var(--beige);line-height:1.8;margin-bottom:3rem;max-width:600px;}
+    .gal-drop{border:2px dashed rgba(255,255,255,0.2);border-radius:var(--radius-lg);padding:3rem 2rem;text-align:center;margin-bottom:2.5rem;cursor:pointer;transition:border-color 0.2s,background 0.2s;}
+    .gal-drop:hover,.gal-drop.drag-over{border-color:var(--clay);background:rgba(255,255,255,0.04);}
+    .gal-drop input{display:none;}
+    .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;}
+    .gal-item{border-radius:var(--radius-md);overflow:hidden;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);position:relative;}
+    .gal-item img{width:100%;height:190px;object-fit:cover;}
+    .gal-item-cap{padding:0.75rem 1rem;}
+    .gal-item-place{font-size:0.88rem;font-weight:500;color:var(--linen);margin-bottom:2px;}
+    .gal-item-note{font-size:0.76rem;color:var(--earth-lt);cursor:pointer;line-height:1.5;}
+    .gal-item-remove{position:absolute;top:8px;right:8px;background:rgba(0,0,0,0.55);border:none;color:white;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:0.8rem;display:none;align-items:center;justify-content:center;}
+    .gal-item:hover .gal-item-remove{display:flex;}
+    .gal-empty{text-align:center;padding:3rem 2rem;color:var(--earth-lt);}
+    .gal-empty-icon{font-size:2.5rem;margin-bottom:0.75rem;}
+
+    /* EDUCATION */
+    #education{background:var(--sand);}
+    .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;}
+    .edu-card{background:var(--linen);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1.75rem;transition:border-color 0.2s,transform 0.2s;}
+    .edu-card:hover{border-color:var(--clay);transform:translateY(-3px);}
+    .edu-card.featured{grid-column:1/-1;background:var(--white);border-color:var(--monstera);display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;}
+    .edu-icon{font-size:2.2rem;margin-bottom:0.75rem;}
+    .edu-icon-lg{font-size:3rem;}
+    .edu-degree{font-family:var(--ff-display);font-size:1.05rem;font-weight:500;color:var(--earth);margin-bottom:4px;}
+    .edu-school{font-size:0.85rem;color:var(--monstera);font-weight:500;margin-bottom:4px;}
+    .edu-period{font-size:0.78rem;color:var(--earth-lt);margin-bottom:0.5rem;}
+    .edu-note{font-size:0.82rem;color:var(--earth-mid);line-height:1.6;}
+    .edu-badge{display:inline-block;font-size:0.7rem;font-weight:500;background:#EAF3E5;color:var(--monstera-dk);padding:3px 10px;border-radius:10px;margin-top:0.5rem;}
+
+    /* SKILLS */
+    #skills{background:var(--linen);}
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.25rem;margin-top:3rem;}
+    .skill-card{background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1.5rem;}
+    .skill-head{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
+    .skill-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .skill-name{font-size:0.9rem;font-weight:500;color:var(--earth);}
+    .skill-pills{display:flex;flex-wrap:wrap;gap:6px;}
+    .skill-pill{font-size:0.76rem;background:var(--linen);border:1px solid var(--beige);color:var(--earth-mid);padding:4px 11px;border-radius:14px;}
+
+    /* CERTS */
+    #certifications{background:var(--sand);}
+    .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:3rem;}
+    .cert-card{background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1.5rem;display:flex;flex-direction:column;gap:10px;transition:border-color 0.2s,transform 0.2s;}
+    .cert-card:hover{border-color:var(--clay);transform:translateY(-3px);}
+    .cert-icon{font-size:1.8rem;}
+    .cert-name{font-size:0.9rem;font-weight:500;color:var(--earth);line-height:1.4;}
+    .cert-issuer{font-size:0.78rem;color:var(--earth-lt);}
+    .cert-badge{display:inline-block;font-size:0.7rem;font-weight:500;background:#EAF3E5;color:var(--monstera-dk);padding:3px 10px;border-radius:10px;align-self:flex-start;}
+    .cert-badge.progress{background:#FFF3CD;color:#7A5800;}
+
+    /* CREATIVE */
+    #creative{background:var(--earth);color:var(--linen);}
+    #creative .section-eyebrow{color:var(--clay);}
+    #creative .section-title{color:var(--linen);}
+    #creative .section-body{color:var(--beige);}
+    .creative-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
+    .cr-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-md);padding:1.75rem;transition:background 0.2s,transform 0.2s;}
+    .cr-card:hover{background:rgba(255,255,255,0.1);transform:translateY(-3px);}
+    .cr-card.india{background:rgba(232,134,26,0.1);border-color:rgba(232,134,26,0.28);}
+    .cr-card.india:hover{background:rgba(232,134,26,0.16);}
+    .cr-icon{font-size:2rem;margin-bottom:1rem;}
+    .cr-title{font-family:var(--ff-display);font-size:1rem;font-weight:500;color:var(--linen);margin-bottom:0.5rem;}
+    .cr-body{font-size:0.84rem;color:var(--beige);line-height:1.7;}
+    .cr-link{display:inline-block;margin-top:0.75rem;font-size:0.76rem;color:var(--clay);font-weight:500;cursor:pointer;transition:color 0.2s;}
+    .cr-link:hover{color:#d4a875;}
+    .cr-link.saffron{color:#F5C887;}
+    .cr-link.saffron:hover{color:var(--saffron);}
+
+    /* CONTACT */
+    #contact{background:var(--sand);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    .contact-links{display:flex;flex-direction:column;gap:12px;margin-top:2rem;}
+    .c-link{display:flex;align-items:center;gap:14px;background:var(--linen);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1rem 1.25rem;transition:border-color 0.2s,transform 0.15s;color:var(--earth);}
+    .c-link:hover{border-color:var(--monstera);transform:translateX(4px);}
+    .c-link-icon{width:38px;height:38px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+    .c-link-text{flex:1;}
+    .c-link-label{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:2px;}
+    .c-link-value{font-size:0.9rem;font-weight:500;color:var(--earth);}
+    .contact-note{background:var(--linen);border:1px solid var(--beige);border-left:3px solid var(--monstera);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:1.5rem;font-size:0.9rem;color:var(--earth-mid);line-height:1.7;margin-top:1rem;}
+
+    footer{background:var(--earth);color:var(--beige);text-align:center;padding:2rem;font-size:0.82rem;}
+    footer span{color:var(--monstera);}
+
+    .fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.55s ease,transform 0.55s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+
+
+    /* COLLAPSIBLE TIMELINE */
+    .tl-card-body { display: none; padding-top: 0.75rem; }
+    .tl-card.expanded .tl-card-body { display: block; }
+    .tl-card-summary {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; gap: 1rem;
+    }
+    .tl-card-summary:hover .tl-role { color: var(--monstera); }
+    .tl-chevron {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--sand); border: 1px solid var(--beige);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; color: var(--earth-lt); flex-shrink: 0;
+      transition: transform 0.25s, background 0.2s;
+    }
+    .tl-card.expanded .tl-chevron {
+      transform: rotate(180deg);
+      background: var(--monstera); color: var(--white);
+      border-color: var(--monstera);
+    }
+    .tl-card-summary:hover .tl-chevron { background: var(--beige); }
+    /* milestone band and sub-rows stay always visible */
+    .mba-block { display: block !important; }
+
+    /* sub-cards inside MBA block also collapsible */
+    .sub-card-body { display: none; padding-top: 0.5rem; }
+    .sub-card.expanded .sub-card-body { display: block; }
+    .sub-summary {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; gap: 0.75rem;
+    }
+    .sub-summary:hover .sub-role { color: var(--monstera); }
+    .sub-chevron {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--sand); border: 1px solid var(--beige);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.62rem; color: var(--earth-lt); flex-shrink: 0;
+      transition: transform 0.25s, background 0.2s;
+    }
+    .sub-card.expanded .sub-chevron {
+      transform: rotate(180deg);
+      background: var(--monstera); color: var(--white);
+      border-color: var(--monstera);
+    }
+
+    @media(max-width:768px){
+      .hero-inner,.about-grid,.contact-grid,.edu-grid{grid-template-columns:1fr;gap:2.5rem;}
+      .edu-card.featured{grid-template-columns:1fr;}
+      .creative-grid{grid-template-columns:1fr;}
+      .trait-grid{grid-template-columns:1fr 1fr;}
+      .nav-links{display:none;}
+      .hero-bg-leaf{display:none;}
+      section{padding:4rem 0;}
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- PETS GALLERY -->
+<div id="pets-gallery" style="display:none;position:fixed;inset:0;background:var(--earth);z-index:200;overflow-y:auto;">
+  <div class="gal-nav">
+    <div class="gal-title">&#128054; Nemo &amp; the furry family</div>
+    <button class="gal-close" onclick="closePetsGallery()">&#8592; Back to portfolio</button>
+  </div>
+  <div class="gal-inner">
+    <p class="gal-intro">Nemo is my dog and my greatest love &mdash; he lives with my family in India and is deeply missed every single day. In Munich, my WG comes with its own little zoo: cats, bunnies, and endless warmth. These are the souls that make life fuller.</p>
+    <div class="gal-drop" id="petsDrop">
+      <input type="file" id="petsInput" accept="image/*" multiple />
+      <div style="font-size:2rem;margin-bottom:0.5rem;">&#128054;</div>
+      <div style="font-size:0.95rem;font-weight:500;color:var(--linen);margin-bottom:4px;">Add photos of Nemo, cats, bunnies &amp; friends</div>
+      <div style="font-size:0.8rem;color:var(--earth-lt);margin-bottom:1rem;">Drag &amp; drop or click to browse</div>
+      <button style="background:var(--clay);color:white;border:none;padding:9px 22px;border-radius:18px;font-size:0.84rem;font-family:var(--ff-body);cursor:pointer;" onclick="document.getElementById('petsInput').click()">Choose photos</button>
+    </div>
+    <div class="gal-grid" id="petsGrid">
+      <div class="gal-empty" id="petsEmpty">
+        <div class="gal-empty-icon">&#128054;</div>
+        <div style="font-size:0.88rem;line-height:1.7;">Upload photos of Nemo, the WG cats, bunnies &mdash;<br/>and anyone else with four legs and a good heart.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
+  <img id="lb-img" src="" alt="Preview" />
+</div>
+
+<!-- TRAVEL GALLERY -->
+<div id="travel-gallery">
+  <div class="gal-nav">
+    <div class="gal-title">&#127758; Explorations &mdash; places, moments, thoughts</div>
+    <button class="gal-close" onclick="closeGallery()">&#8592; Back to portfolio</button>
+  </div>
+  <div class="gal-inner">
+    <p class="gal-intro">Every place leaves something behind &mdash; a taste, a feeling, a thought I carry home. Bavaria&rsquo;s hidden lakes and off-beaten towns, the canals of Amsterdam, the ghats of Varanasi, the backstreets cities most tourists skip. Here&rsquo;s what I&rsquo;ve seen, felt, and remembered.</p>
+    <div class="gal-drop" id="galDrop">
+      <input type="file" id="galInput" accept="image/*" multiple />
+      <div style="font-size:2rem;margin-bottom:0.5rem;">&#128247;</div>
+      <div style="font-size:0.95rem;font-weight:500;color:var(--linen);margin-bottom:4px;">Add travel photos &amp; moments</div>
+      <div style="font-size:0.8rem;color:var(--earth-lt);margin-bottom:1rem;">Drag &amp; drop, or click to browse &mdash; up to 5 photos per place</div>
+      <button style="background:var(--clay);color:white;border:none;padding:9px 22px;border-radius:18px;font-size:0.84rem;font-family:var(--ff-body);cursor:pointer;" onclick="document.getElementById('galInput').click()">Choose photos</button>
+    </div>
+    <div class="gal-grid" id="galGrid">
+      <div class="gal-empty" id="galEmpty">
+        <div class="gal-empty-icon">&#128506;</div>
+        <div style="font-size:0.88rem;line-height:1.7;">Your travel memories will live here.<br/>Bavaria&rsquo;s lakes, Amsterdam&rsquo;s canals, India&rsquo;s temples &mdash; wherever the road takes you.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Pavan <span>Kumar</span> <span>A</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#creative">Creative</a></li>
+    <li><a href="#contact" class="nav-cta">Say hello</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <svg class="hero-bg-leaf" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 20 C200 20 320 60 360 160 C400 260 340 360 200 380 C60 400 20 300 20 200 C20 100 80 20 200 20Z" fill="#7C9A6E"/>
+    <path d="M200 80 C200 80 160 120 140 180 C120 240 150 300 200 320" stroke="#5A7A50" stroke-width="8" stroke-linecap="round"/>
+    <path d="M200 80 C200 80 180 140 190 200" stroke="#5A7A50" stroke-width="4" stroke-linecap="round"/>
+    <path d="M190 200 C190 200 155 212 140 232" stroke="#5A7A50" stroke-width="3" stroke-linecap="round"/>
+    <path d="M190 200 C190 200 218 207 232 222" stroke="#5A7A50" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag"><div class="hero-tag-dot"></div>Available for new opportunities &middot; Munich</div>
+        <h1 class="hero-name">Pavan<br/>Kumar <em>A</em></h1>
+        <p class="hero-tagline">IT professional by trade, cook by passion, explorer by nature. Based in Munich. Always exploring new cities, cuisines, and cultures &mdash; with the same curiosity I bring to complex IT landscapes.</p>
+        <div class="hero-actions">
+          <a href="#journey" class="btn-primary">View my journey &#8595;</a>
+          <a href="#contact" class="btn-secondary">Get in touch</a>
+        </div>
+      </div>
+      <div class="currently-card fade-up">
+        <div class="currently-title"><span>&#127807;</span> Currently</div>
+        <div class="currently-row"><div class="c-icon bg-green">&#127859;</div><div class="c-meta"><div class="c-label">Cooking</div><div class="c-value">Experimenting with fusion recipes</div></div></div>
+        <div class="currently-row"><div class="c-icon bg-clay">&#128054;</div><div class="c-meta"><div class="c-label">Pet lover</div><div class="c-value">Nemo &mdash; my dog, my world &#10084;</div></div></div>
+        <div class="currently-row"><div class="c-icon bg-clay">&#127758;</div><div class="c-meta"><div class="c-label">Exploring</div><div class="c-value">Europe &mdash; lakes, cities &amp; hidden towns</div></div></div>
+        <div class="currently-row"><div class="c-icon bg-blue">&#127891;</div><div class="c-meta"><div class="c-label">Learning</div><div class="c-value">German B2 &middot; McKinsey Forward Programme</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="fade-up">
+        <p class="section-eyebrow">About me</p>
+        <h2 class="section-title">Strategy meets<br/>curiosity</h2>
+        <p class="section-body">Strategic professional with 4+ years across IT governance, project management, and executive operations &mdash; known for turning complexity into structured execution in fast-moving international environments.</p>
+        <p class="section-body" style="margin-top:1rem;">Originally from Bangalore, now rooted in Munich. A deep thinker by nature, grounded in Indian culture and Hindu philosophy &mdash; with the same rigour I bring to governance frameworks, I bring to understanding the world around me.</p>
+        <div class="spirit-box"><strong>&#x1F6D5; Deeply rooted, widely curious.</strong> Indian history, culture, food, and spirituality are close to my heart. Always happy to explore Vedic philosophy, temple architecture, classical arts &mdash; or why rasam is the most underrated soup in the world.</div>
+        <div class="lang-row">
+          <div class="lang-pill">&#127468;&#127463; English <span class="lang-lv">&middot; C2</span></div>
+          <div class="lang-pill">&#127465;&#127466; German <span class="lang-lv">&middot; B1&#8594;B2</span></div>
+          <div class="lang-pill">&#127470;&#127475; Hindi <span class="lang-lv">&middot; C1</span></div>
+          <div class="lang-pill">&#127470;&#127475; Telugu <span class="lang-lv">&middot; Native</span></div>
+          <div class="lang-pill">&#127470;&#127475; Kannada <span class="lang-lv">&middot; Native</span></div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="trait-grid">
+          <div class="trait-card"><div class="trait-icon">&#128197;</div><div class="trait-name">PMO &amp; Portfolio</div><div class="trait-sub">160+ project portfolios across complex IT landscapes</div></div>
+          <div class="trait-card"><div class="trait-icon">&#128274;</div><div class="trait-name">GRC &amp; Compliance</div><div class="trait-sub">DORA, ISO 27001, GDPR, VAIT, COBIT</div></div>
+          <div class="trait-card"><div class="trait-icon">&#129302;</div><div class="trait-name">AI &amp; Automation</div><div class="trait-sub">Gen AI adoption in enterprise environments</div></div>
+          <div class="trait-card"><div class="trait-icon">&#127807;</div><div class="trait-name">Always Growing</div><div class="trait-sub">MBA with Distinction &middot; McKinsey Forward &middot; B2</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="container">
+    <p class="section-eyebrow">My journey</p>
+    <h2 class="section-title">From Bangalore to Munich<br/>and beyond</h2>
+    <p class="section-body">A career built across continents, disciplines, and chapters. Latest first.</p>
+
+    <div class="tl-root">
+
+      <!-- NOW -->
+      <div class="era"><span class="era-badge green">&#127807; Now &middot; 2026</span><div class="era-line"></div></div>
+
+      <div class="tl-row fade-up">
+        <div class="tl-dot now">&#10024;</div>
+        <div class="tl-card now-card">
+          <div class="tl-head"><div class="tl-role">Actively looking for new opportunities</div><div class="tl-date">Apr 2026 &mdash; Present</div></div>
+          <div class="tl-org saffron">Munich &middot; Europe &middot; Open to the world</div>
+          <div class="tl-body">Immediately available. Seeking roles in IT PMO, portfolio management, GRC, AI governance, or executive operations &mdash; across Germany, Europe, and beyond. Completing German B2 Berufssprachkurs and McKinsey Forward Programme in parallel.</div>
+        </div>
+      </div>
+
+      <!-- POST GRADUATION -->
+      <div class="era"><span class="era-badge green">&#127959; Post-Graduation &middot; First Full-Time Role</span><div class="era-line"></div></div>
+
+      <div class="tl-row fade-up">
+        <div class="tl-dot green">&#127959;</div>
+        <div class="tl-card accent">
+          <div class="tl-head"><div class="tl-role">IT Trainee &mdash; APP2 Function (3 Parallel Streams)</div><div class="tl-date">Oct 2025 &ndash; Apr 2026</div></div>
+          <div class="tl-org">Allianz Technology &middot; Munich</div>
+          <ul class="tl-list">
+            <li><strong>EMT Office:</strong> Supported APP2 Executive Management Team with strategic coordination, governance reporting, and cross-functional operations.</li>
+            <li><strong>APP2 Assurance &mdash; Portfolio Management:</strong> Governed 160+ active project portfolios; built executive dashboards and escalation frameworks for senior review.</li>
+            <li><strong>Digital Sales &amp; Marketing &mdash; Salesforce PMO:</strong> Drove Salesforce Security Service implementation; managed AI-powered lead tracking and customer conversion analytics.</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Portfolio Management</span><span class="tl-tag">Salesforce</span><span class="tl-tag">PMO</span><span class="tl-tag">AI Governance</span><span class="tl-tag">Executive Operations</span></div>
+          <div><span class="tl-badge badge-green">&#10003; First full-time role after graduation</span></div>
+        </div>
+      </div>
+
+      <!-- GRADUATION MILESTONE -->
+      <div class="milestone-band fade-up">
+        <div class="milestone-band-icon">&#127891;</div>
+        <div class="milestone-band-text">
+          <strong>Graduation Milestone &mdash; September 2025</strong>
+          <span>MBA Thesis defended &middot; Graduated with Distinction (Grade 1.4) &middot; APP2 Internship concluded &middot; Full-time career begins</span>
+        </div>
+      </div>
+
+      <!-- MBA YEARS -->
+      <div class="era"><span class="era-badge gold">&#127465;&#127466; MBA Years &middot; Germany (Oct 2022 &ndash; Sep 2025)</span><div class="era-line"></div></div>
+
+      <!-- APP2 INTERN -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot green">&#128203;</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">Full-time Intern &mdash; APP2 Executive Management Team Office</div><div class="tl-date">Feb &ndash; Sep 2025</div></div>
+          <div class="tl-org">Allianz Technology &middot; Munich</div>
+          <ul class="tl-list">
+            <li>Full-time voluntary internship supporting APP2 senior leadership with strategic coordination, board-level documentation, and cross-functional governance reporting.</li>
+            <li>Performance directly led to the IT Trainee offer upon graduation.</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">Executive Operations</span><span class="tl-tag">Governance</span><span class="tl-tag">Stakeholder Management</span></div>
+          <div><span class="tl-badge badge-clay">&#8599; Led directly to IT Trainee role</span></div>
+        </div>
+      </div>
+
+      <!-- BURGER KING -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot">&#127828;</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">Part-time Team Member</div><div class="tl-date">Aug &ndash; Nov 2024</div></div>
+          <div class="tl-org clay">Burger King &middot; Munich</div>
+          <div class="tl-body">Part-time student job to sustain living costs during MBA studies &mdash; as most international students in Germany do. Stayed active, grounded, and earning while completing the degree.</div>
+        </div>
+      </div>
+
+      <!-- ALLIANZ SE GRC -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot green">&#128274;</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">IT GRC Intern &mdash; Mandatory MBA Internship</div><div class="tl-date">Oct 2023 &ndash; Mar 2024</div></div>
+          <div class="tl-org">Allianz SE &middot; Munich</div>
+          <ul class="tl-list">
+            <li>Mandatory internship module worth 30 academic credits, embedded within the MBA programme.</li>
+            <li>Worked across DORA, VAIT, ISO 27001, GDPR, and COBIT frameworks in a Group-level regulated financial environment.</li>
+            <li>Supported audit preparation, compliance reporting, and risk documentation for senior review.</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">DORA</span><span class="tl-tag">ISO 27001</span><span class="tl-tag">GDPR</span><span class="tl-tag">COBIT</span><span class="tl-tag">VAIT</span></div>
+          <div><span class="tl-badge badge-green">30 Academic Credits</span></div>
+        </div>
+      </div>
+
+      <!-- MBA BLOCK (nested sub-activities) -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot gold">&#128218;</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">MBA &mdash; Risk Management &amp; Leadership</div><div class="tl-date">Oct 2022 &ndash; Sep 2025</div></div>
+          <div class="tl-org">Hochschule Bremen &middot; Germany</div>
+          <div class="tl-body">Three-year MBA specialising in IT governance, risk frameworks, leadership, and strategic decision-making. Studied, worked, and built a life in Germany simultaneously &mdash; in a new country and language.</div><div style="margin-top:0.6rem;background:var(--sand);border-left:3px solid var(--monstera);border-radius:0 8px 8px 0;padding:0.6rem 0.9rem;font-size:0.82rem;color:var(--earth-mid);"><span style="font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--earth-lt);display:block;margin-bottom:2px;">Master's Thesis</span><em style="color:var(--earth);font-style:italic;">AI-Driven MNC Corporate Governance in the EU</em></div>
+          <div><span class="tl-badge badge-gold">&#10024; Distinction &middot; Grade 1.4</span></div>
+
+          <!-- Doc upload for MBA -->
+          <div class="doc-upload" style="margin-top:1rem;">
+            <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:0.5rem;">Upload MBA Certificate &amp; Thesis</div>
+            <div class="doc-drop" onclick="triggerDoc('mbaDoc')">
+              <input type="file" id="mbaDoc" accept=".pdf,image/*" multiple onchange="handleDocs(this,'mbaDocList')" />
+              <div class="doc-drop-icon">&#128196;</div>
+              <div class="doc-drop-text"><strong>Certificate, Thesis PDF or Transcript</strong>Click to upload (PDF or image)</div>
+            </div>
+            <div class="doc-list" id="mbaDocList"></div>
+          </div>
+
+          <!-- MBA sub-activities -->
+          <div class="mba-block">
+            <div class="mba-block-title">Activities during MBA</div>
+
+            <!-- AIESEC -->
+            <div class="sub-row">
+              <div class="sub-dot">&#127758;</div>
+              <div class="sub-card">
+                <div class="sub-date">Apr &ndash; Jul 2023</div>
+                <div class="sub-role">AIESEC International Exchange</div>
+                <div class="sub-org">Hochschule Bremen</div>
+                <div class="sub-body">Cross-cultural collaboration and leadership development through the AIESEC exchange programme. Promotional activities, team coordination, and international outreach.</div>
+                <div class="photo-upload" style="margin-top:0.6rem;">
+                  <div class="photo-drop" onclick="triggerPhoto('aiesecPhotos')">
+                    <input type="file" id="aiesecPhotos" accept="image/*" multiple onchange="handlePhotos(this,'aiesecPreviews')" />
+                    <div class="photo-drop-icon">&#128247;</div>
+                    <div class="photo-drop-text"><strong>Add AIESEC photos</strong>Up to 5 images</div>
+                  </div>
+                  <div class="photo-previews" id="aiesecPreviews"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STUDENT AMBASSADOR -->
+            <div class="sub-row">
+              <div class="sub-dot">&#127891;</div>
+              <div class="sub-card">
+                <div class="sub-date">2023 &ndash; 2024 (alongside MBA)</div>
+                <div class="sub-role">Student Ambassador</div>
+                <div class="sub-org">Hochschule Bremen</div>
+                <div class="sub-body">Built social media channels from scratch to promote the MBA programme. Developed content strategy, produced media, and supported prospect onboarding sessions and open days. Mentored incoming students.</div>
+                <div class="photo-upload" style="margin-top:0.6rem;">
+                  <div class="photo-drop" onclick="triggerPhoto('ambPhotos')">
+                    <input type="file" id="ambPhotos" accept="image/*" multiple onchange="handlePhotos(this,'ambPreviews')" />
+                    <div class="photo-drop-icon">&#128247;</div>
+                    <div class="photo-drop-text"><strong>Add Ambassador &amp; mentoring photos</strong>Up to 5 images</div>
+                  </div>
+                  <div class="photo-previews" id="ambPreviews"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MBA PRESENTATIONS -->
+            <div class="sub-row">
+              <div class="sub-dot">&#127908;</div>
+              <div class="sub-card">
+                <div class="sub-date">2022 &ndash; 2025</div>
+                <div class="sub-role">MBA Class Presentations &amp; Projects</div>
+                <div class="sub-org">Hochschule Bremen</div>
+                <div class="sub-body">Academic presentations, group projects, and research work across risk management, leadership, and IT strategy modules.</div>
+                <div class="photo-upload" style="margin-top:0.6rem;">
+                  <div class="photo-drop" onclick="triggerPhoto('mbaPhotos')">
+                    <input type="file" id="mbaPhotos" accept="image/*" multiple onchange="handlePhotos(this,'mbaPreviews')" />
+                    <div class="photo-drop-icon">&#128247;</div>
+                    <div class="photo-drop-text"><strong>Add presentation photos</strong>Up to 5 images</div>
+                  </div>
+                  <div class="photo-previews" id="mbaPreviews"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AIRPORT -->
+            <div class="sub-row">
+              <div class="sub-dot">&#9749;</div>
+              <div class="sub-card">
+                <div class="sub-date">Jun 2023 &middot; 15 days</div>
+                <div class="sub-role">Mini-Job &mdash; Airport Lounge</div>
+                <div class="sub-org">Bremen Airport &middot; Bremen</div>
+                <div class="sub-body">Short-term student job at the airport lounge. Every experience teaches something &mdash; even if it&rsquo;s just staying composed when everything moves at once.</div>
+                <div class="photo-upload" style="margin-top:0.6rem;">
+                  <div class="photo-drop" onclick="triggerPhoto('airportPhotos')">
+                    <input type="file" id="airportPhotos" accept="image/*" multiple onchange="handlePhotos(this,'airportPreviews')" />
+                    <div class="photo-drop-icon">&#128247;</div>
+                    <div class="photo-drop-text"><strong>Add photos</strong>Up to 5 images</div>
+                  </div>
+                  <div class="photo-previews" id="airportPreviews"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ARRIVED IN GERMANY -->
+            <div class="sub-row">
+              <div class="sub-dot">&#9992;</div>
+              <div class="sub-card">
+                <div class="sub-date">January 2023</div>
+                <div class="sub-role">Arrived in Germany</div>
+                <div class="sub-org clay">Bremen, Germany</div>
+                <div class="sub-body">A new country, a new language, a new chapter. Began building life in Germany while completing the MBA &mdash; full immersion as the fastest path to growth.</div>
+              </div>
+            </div>
+
+          </div><!-- end mba-block -->
+        </div>
+      </div>
+
+      <!-- INDIA -->
+      <div class="era"><span class="era-badge">&#127470;&#127475; India &middot; 2015 &ndash; 2022</span><div class="era-line"></div></div>
+
+      <!-- LTIMINDTREE -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot green">&#128187;</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">Consultant &mdash; Systems Engineer (QA &amp; IT Service Management)</div><div class="tl-date">Dec 2019 &ndash; Jul 2022</div></div>
+          <div class="tl-org">LTIMindtree Ltd. &middot; Bangalore (Whitefield)</div>
+          <ul class="tl-list">
+            <li>Led test strategy for international projects including MS Azure and Unilever PPM; authored 300+ test cases, identified 70+ critical defects.</li>
+            <li>Deputised for Team Lead; coordinated cross-functional testing across an international team using JIRA and Azure DevOps.</li>
+            <li>Supported audit extractions, compliance reporting, and IT service operations via ServiceNow and BMC Remedy.</li>
+          </ul>
+          <div class="tl-tags"><span class="tl-tag">JIRA</span><span class="tl-tag">Azure DevOps</span><span class="tl-tag">ServiceNow</span><span class="tl-tag">Agile</span><span class="tl-tag">SQL</span></div>
+        </div>
+      </div>
+
+      <!-- MINDTREE TRAINING -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot gold">&#11088;</div>
+        <div class="tl-card accent">
+          <div class="tl-head"><div class="tl-role">Foundation Training Programme &mdash; 70 Days</div><div class="tl-date">Sep &ndash; Nov 2019</div></div>
+          <div class="tl-org clay">Mindtree Ltd. &middot; Bhubaneswar</div>
+          <div class="tl-body">An intensive onboarding that shaped how I think about technology, teamwork, and professional growth. One of the most formative and joyful experiences of my life &mdash; the energy, the people, the pace, the friendships built in those 70 days.</div>
+          <div><span class="tl-badge badge-gold">&#10024; Among the best experiences of my life</span></div>
+        </div>
+      </div>
+
+      <!-- BE CSE -->
+      <div class="tl-row fade-up">
+        <div class="tl-dot">&#127979;</div>
+        <div class="tl-card">
+          <div class="tl-head"><div class="tl-role">B.E. &mdash; Computer Science &amp; Engineering</div><div class="tl-date">Aug 2015 &ndash; May 2019</div></div>
+          <div class="tl-org">Sri Venkateshwara College of Engineering (SVCE) &middot; Bangalore</div>
+          <div class="tl-body">Four years building the technical foundation &mdash; programming, systems, networks, databases, and the start of a deep curiosity for how complex systems work together.</div>
+
+          <!-- Doc upload for BE -->
+          <div class="doc-upload" style="margin-top:1rem;">
+            <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--earth-lt);margin-bottom:0.5rem;">Upload Degree Certificate</div>
+            <div class="doc-drop" onclick="triggerDoc('beDoc')">
+              <input type="file" id="beDoc" accept=".pdf,image/*" multiple onchange="handleDocs(this,'beDocList')" />
+              <div class="doc-drop-icon">&#128196;</div>
+              <div class="doc-drop-text"><strong>Degree Certificate or Marksheet</strong>Click to upload (PDF or image)</div>
+            </div>
+            <div class="doc-list" id="beDocList"></div>
+          </div>
+
+          <!-- DRDO + RRI sub -->
+          <div class="mba-block" style="margin-top:1rem;">
+            <div class="mba-block-title">Internships during B.E.</div>
+
+            <div class="sub-row">
+              <div class="sub-dot">&#128299;</div>
+              <div class="sub-card">
+                <div class="sub-date">Jan &ndash; Apr 2019</div>
+                <div class="sub-role">Research Intern</div>
+                <div class="sub-org">DRDO &mdash; Defence Research &amp; Development Organisation &middot; India</div>
+                <div class="sub-body">Contributed to defence research documentation and technical analysis in a high-security, mission-critical environment during the final year of B.E.</div>
+                <div class="tl-tags" style="margin-top:0.5rem;"><span class="tl-tag">Research</span><span class="tl-tag">Defence Technology</span></div>
+              </div>
+            </div>
+
+            <div class="sub-row">
+              <div class="sub-dot">&#128300;</div>
+              <div class="sub-card">
+                <div class="sub-date">Jul &ndash; Aug 2018</div>
+                <div class="sub-role">Research Intern &mdash; Computer Inventory System</div>
+                <div class="sub-org">Raman Research Institute (RRI) &middot; Bangalore</div>
+                <div class="sub-body">Built a computer inventory management system from scratch using FormTools, SQL, and PHP &mdash; my first real-world project and the beginning of a love for building things that actually work.</div>
+                <div class="tl-tags" style="margin-top:0.5rem;"><span class="tl-tag">PHP</span><span class="tl-tag">SQL</span><span class="tl-tag">FormTools</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end tl-root -->
+  </div>
+</section>
+
+
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-eyebrow">Skills</p>
+    <h2 class="section-title">The toolkit</h2>
+    <p class="section-body">Governance frameworks, project tooling, and the AI layer that ties it all together.</p>
+    <div class="skills-grid">
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-green">&#128197;</div><div class="skill-name">PMO &amp; Portfolio Management</div></div><div class="skill-pills"><span class="skill-pill">Portfolio Governance</span><span class="skill-pill">Risk Reporting</span><span class="skill-pill">Stakeholder Management</span><span class="skill-pill">Roadmap Planning</span><span class="skill-pill">Executive Reporting</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-clay">&#128274;</div><div class="skill-name">GRC &amp; Compliance</div></div><div class="skill-pills"><span class="skill-pill">DORA</span><span class="skill-pill">ISO 27001</span><span class="skill-pill">GDPR</span><span class="skill-pill">VAIT</span><span class="skill-pill">COBIT</span><span class="skill-pill">Audit Support</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon" style="background:#EDE5F5;">&#129302;</div><div class="skill-name">AI &amp; Automation</div></div><div class="skill-pills"><span class="skill-pill">Claude</span><span class="skill-pill">ChatGPT</span><span class="skill-pill">Gen AI Lab</span><span class="skill-pill">AI Governance</span><span class="skill-pill">Prompt Engineering</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-blue">&#128295;</div><div class="skill-name">Tools &amp; Platforms</div></div><div class="skill-pills"><span class="skill-pill">Salesforce</span><span class="skill-pill">ServiceNow</span><span class="skill-pill">JIRA</span><span class="skill-pill">Confluence</span><span class="skill-pill">Azure DevOps</span><span class="skill-pill">FormTools</span><span class="skill-pill">Power BI</span><span class="skill-pill">SAP</span><span class="skill-pill">Archer</span><span class="skill-pill">MS Planner</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-green">&#128202;</div><div class="skill-name">Methodologies</div></div><div class="skill-pills"><span class="skill-pill">Agile / Scrum</span><span class="skill-pill">Waterfall</span><span class="skill-pill">ITIL</span><span class="skill-pill">Change Management</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-sand">&#128203;</div><div class="skill-name">Project Management</div></div><div class="skill-pills"><span class="skill-pill">MS Project</span><span class="skill-pill">MS Planner</span><span class="skill-pill">SharePoint</span><span class="skill-pill">Portfolio Tracking</span><span class="skill-pill">PCR &amp; Lifecycle Mgmt</span><span class="skill-pill">Budget &amp; Capex/Opex</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-clay">&#128187;</div><div class="skill-name">Microsoft 365</div></div><div class="skill-pills"><span class="skill-pill">Excel</span><span class="skill-pill">PowerPoint</span><span class="skill-pill">Teams</span><span class="skill-pill">SharePoint</span><span class="skill-pill">OneNote</span><span class="skill-pill">Power Automate</span><span class="skill-pill">Viva Engage</span><span class="skill-pill">Power BI</span></div></div>
+      <div class="skill-card fade-up"><div class="skill-head"><div class="skill-icon bg-sand">&#128187;</div><div class="skill-name">Technical</div></div><div class="skill-pills"><span class="skill-pill">SQL</span><span class="skill-pill">PHP</span><span class="skill-pill">MS Azure</span><span class="skill-pill">Data Reporting</span><span class="skill-pill">FormTools</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <p class="section-eyebrow">Certifications</p>
+    <h2 class="section-title">Credentials</h2>
+    <div class="cert-grid">
+      <div class="cert-card fade-up"><div class="cert-icon">&#9925;</div><div class="cert-name">Salesforce Certified Administrator</div><div class="cert-issuer">Salesforce</div><span class="cert-badge">Certified</span></div>
+      <div class="cert-card fade-up"><div class="cert-icon">&#128311;</div><div class="cert-name">Microsoft Azure Fundamentals (AZ-900)</div><div class="cert-issuer">Microsoft</div><span class="cert-badge">Certified</span></div>
+      <div class="cert-card fade-up"><div class="cert-icon">&#127979;</div><div class="cert-name">McKinsey Forward Programme</div><div class="cert-issuer">McKinsey &amp; Company</div><div style="font-size:0.78rem;color:var(--earth-mid);line-height:1.6;margin-top:2px;">A selective global programme developing future-ready skills in structured problem-solving, communication, leadership, and digital transformation — run by McKinsey &amp; Company for high-potential professionals worldwide.</div><span class="cert-badge progress">In Progress</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREATIVE -->
+<section id="creative">
+  <div class="container">
+    <p class="section-eyebrow">Creative space</p>
+    <h2 class="section-title">Beyond the spreadsheets</h2>
+    <p class="section-body">The same curiosity that drives my professional work spills into everything else &mdash; the kitchen, the garden, the road, the bookshelf, and the soul.</p>
+    <div class="creative-grid">
+      <div class="cr-card fade-up"><div class="cr-icon">&#127859;</div><div class="cr-title">Cooking &amp; Baking</div><div class="cr-body">Fusion is my favourite framework. Indian spices meet European technique, unexpected pairings, and the occasional successful experiment worth sharing with friends over a long evening.</div><span class="cr-link">&#8594; Recipes coming soon</span></div>
+      <div class="cr-card fade-up"><div class="cr-icon">&#127807;</div><div class="cr-title">Gardening</div><div class="cr-body">Currently growing vegetables at home in Munich. There&rsquo;s something deeply satisfying about nurturing something from seed &mdash; patience, attention, and the quiet reward of harvest.</div><span class="cr-link">&#8594; Garden journal coming soon</span></div>
+      <div class="cr-card fade-up"><div class="cr-icon">&#127758;</div><div class="cr-title">Exploring Europe</div><div class="cr-body">Bavaria&rsquo;s hidden lakes and off-beaten mountain towns, the canals of Amsterdam, quiet village markets &mdash; every place teaches something the classroom can&rsquo;t.</div><span class="cr-link" onclick="openGallery()">&#8594; View my travel gallery &#8599;</span></div>
+      <div class="cr-card fade-up"><div class="cr-icon">&#128218;</div><div class="cr-title">Reading</div><div class="cr-body">A mix of strategy, human behaviour, philosophy, and the occasional novel. Books are the shortest distance between where you are and where you want to think from.</div><span class="cr-link">&#8594; Bookshelf coming soon</span></div>
+      <div class="cr-card fade-up"><div class="cr-icon">&#127912;</div><div class="cr-title">Art &amp; Design</div><div class="cr-body">Aesthetics matter &mdash; in design, in communication, in how you present ideas. From decks people actually enjoy to visual concepts that tell a story without words.</div><span class="cr-link">&#8594; Portfolio coming soon</span></div>
+      <div class="cr-card fade-up"><div class="cr-icon">&#128054;</div><div class="cr-title">Nemo &amp; the WG family</div><div class="cr-body">Nemo is my dog and my heart &mdash; he lives with my family in India and I miss him every day. Back in Munich, my WG is full of life too: cats, bunnies, and the kind of warm chaos that makes a house feel like home.</div><span class="cr-link" onclick="openPetsGallery()">&#8594; Meet the furry family &#8599;</span></div>
+      <div class="cr-card india fade-up"><div class="cr-icon">&#x1F6D5;</div><div class="cr-title">India &mdash; Culture, Spirit &amp; Roots</div><div class="cr-body">Deeply rooted in Hindu philosophy and Indian civilisation. A deep thinker and a spiritual person &mdash; always happy to explore the Vedas, temple architecture, classical arts, Indian history, or why the subcontinent&rsquo;s food is the most complex and soulful cuisine on earth.</div><span class="cr-link saffron">&#8594; Thoughts &amp; reflections coming soon</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="section-eyebrow">Contact</p>
+        <h2 class="section-title">Let&rsquo;s talk</h2>
+        <p class="section-body">Whether it&rsquo;s a role you think I&rsquo;d be great for, a collaboration, or just a good conversation about IT governance, fusion cooking, Indian culture, or the best off-beaten town in Bavaria &mdash; I&rsquo;m always happy to connect.</p>
+        <div class="contact-note">Currently open to opportunities across Germany, Europe, and beyond &mdash; particularly in IT PMO, portfolio management, GRC, and AI governance. Immediately available.</div>
+      </div>
+      <div class="fade-up">
+        <div class="contact-links">
+          <a href="mailto:pavanttd18@gmail.com" class="c-link"><div class="c-link-icon">&#9993;</div><div class="c-link-text"><div class="c-link-label">Email</div><div class="c-link-value">pavanttd18@gmail.com</div></div><span style="color:var(--earth-lt);">&#8594;</span></a>
+          <a href="https://linkedin.com/in/pavankumar1805" target="_blank" rel="noopener" class="c-link"><div class="c-link-icon">&#128188;</div><div class="c-link-text"><div class="c-link-label">LinkedIn</div><div class="c-link-value">linkedin.com/in/pavankumar1805</div></div><span style="color:var(--earth-lt);">&#8594;</span></a>
+          <a href="https://github.com/PavanKumar-A18" target="_blank" rel="noopener" class="c-link"><div class="c-link-icon">&#128057;</div><div class="c-link-text"><div class="c-link-label">GitHub</div><div class="c-link-value">github.com/PavanKumar-A18</div></div><span style="color:var(--earth-lt);">&#8594;</span></a>
+          <a href="tel:+4917684924626" class="c-link"><div class="c-link-icon">&#128222;</div><div class="c-link-text"><div class="c-link-label">Phone</div><div class="c-link-value">+49 176 849 24626</div></div><span style="color:var(--earth-lt);">&#8594;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><p>Designed &amp; built with intention &middot; <span>Pavan Kumar A</span> &middot; Munich &#127807;</p></footer>
+
+<script>
+
+  // Collapsible timeline cards
+  function wrapTimelineCards() {
+    document.querySelectorAll('.tl-card').forEach(card => {
+      // skip if already processed or is milestone/now-card with no real body
+      if (card.dataset.collapsible) return;
+      card.dataset.collapsible = '1';
+
+      const head = card.querySelector('.tl-head');
+      const org = card.querySelector('.tl-org');
+      if (!head) return;
+
+      // Everything after the tl-head (and tl-org if present) goes into body
+      const allChildren = Array.from(card.children);
+      const headIdx = allChildren.indexOf(head);
+      const orgIdx = org ? allChildren.indexOf(org) : headIdx;
+      const splitIdx = Math.max(headIdx, orgIdx) + 1;
+      const bodyChildren = allChildren.slice(splitIdx);
+
+      if (bodyChildren.length === 0) return;
+
+      // Create body wrapper
+      const body = document.createElement('div');
+      body.className = 'tl-card-body';
+      bodyChildren.forEach(c => body.appendChild(c));
+
+      // Create chevron
+      const chevron = document.createElement('div');
+      chevron.className = 'tl-chevron';
+      chevron.innerHTML = '&#9660;';
+
+      // Wrap head + chevron in summary
+      const summary = document.createElement('div');
+      summary.className = 'tl-card-summary';
+      const headWrap = document.createElement('div');
+      headWrap.style.flex = '1';
+      headWrap.appendChild(head);
+      if (org) headWrap.appendChild(org);
+      summary.appendChild(headWrap);
+      summary.appendChild(chevron);
+
+      card.appendChild(summary);
+      card.appendChild(body);
+
+      summary.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+      });
+    });
+
+    // Sub-cards inside MBA block
+    document.querySelectorAll('.sub-card').forEach(card => {
+      if (card.dataset.collapsible) return;
+      card.dataset.collapsible = '1';
+
+      const role = card.querySelector('.sub-role');
+      const date = card.querySelector('.sub-date');
+      const org = card.querySelector('.sub-org');
+      if (!role) return;
+
+      const allChildren = Array.from(card.children);
+      // find last of role/date/org
+      const markers = [role, date, org].filter(Boolean);
+      const lastMarkerIdx = Math.max(...markers.map(m => allChildren.indexOf(m)));
+      const bodyChildren = allChildren.slice(lastMarkerIdx + 1);
+      if (bodyChildren.length === 0) return;
+
+      const body = document.createElement('div');
+      body.className = 'sub-card-body';
+      bodyChildren.forEach(c => body.appendChild(c));
+
+      const chevron = document.createElement('div');
+      chevron.className = 'sub-chevron';
+      chevron.innerHTML = '&#9660;';
+
+      const summary = document.createElement('div');
+      summary.className = 'sub-summary';
+      const wrap = document.createElement('div');
+      wrap.style.flex = '1';
+      markers.forEach(m => wrap.appendChild(m));
+      summary.appendChild(wrap);
+      summary.appendChild(chevron);
+
+      card.appendChild(summary);
+      card.appendChild(body);
+
+      summary.addEventListener('click', () => card.classList.toggle('expanded'));
+    });
+  }
+
+  // Run after DOM is ready
+  document.addEventListener('DOMContentLoaded', wrapTimelineCards);
+
+  // Scroll animations
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Travel gallery
+  function openGallery() { document.getElementById('travel-gallery').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeGallery() { document.getElementById('travel-gallery').classList.remove('open'); document.body.style.overflow = ''; }
+
+  const galInput = document.getElementById('galInput');
+  const galGrid = document.getElementById('galGrid');
+  const galEmpty = document.getElementById('galEmpty');
+  const galDrop = document.getElementById('galDrop');
+
+  galInput.addEventListener('change', e => addGalFiles(e.target.files));
+  galDrop.addEventListener('dragover', e => { e.preventDefault(); galDrop.classList.add('drag-over'); });
+  galDrop.addEventListener('dragleave', () => galDrop.classList.remove('drag-over'));
+  galDrop.addEventListener('drop', e => { e.preventDefault(); galDrop.classList.remove('drag-over'); addGalFiles(e.dataTransfer.files); });
+
+  function addGalFiles(files) {
+    if (galEmpty) galEmpty.style.display = 'none';
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const r = new FileReader();
+      r.onload = e => {
+        const place = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+        const item = document.createElement('div');
+        item.className = 'gal-item';
+        item.innerHTML = `<img src="${e.target.result}" alt="${place}" onclick="openLightbox(this.src)" /><button class="gal-item-remove" onclick="this.parentElement.remove()">&#x2715;</button><div class="gal-item-cap"><div class="gal-item-place">${place}</div><div class="gal-item-note" onclick="editNote(this)">Click to add a memory or thought...</div></div>`;
+        galGrid.appendChild(item);
+      };
+      r.readAsDataURL(file);
+    });
+  }
+
+
+  // Pets gallery
+  function openPetsGallery() { document.getElementById('pets-gallery').style.display='block'; document.body.style.overflow='hidden'; }
+  function closePetsGallery() { document.getElementById('pets-gallery').style.display='none'; document.body.style.overflow=''; }
+
+  const petsInput = document.getElementById('petsInput');
+  const petsGrid = document.getElementById('petsGrid');
+  const petsEmpty = document.getElementById('petsEmpty');
+  const petsDrop = document.getElementById('petsDrop');
+
+  petsInput.addEventListener('change', e => addPetFiles(e.target.files));
+  petsDrop.addEventListener('dragover', e => { e.preventDefault(); petsDrop.classList.add('drag-over'); });
+  petsDrop.addEventListener('dragleave', () => petsDrop.classList.remove('drag-over'));
+  petsDrop.addEventListener('drop', e => { e.preventDefault(); petsDrop.classList.remove('drag-over'); addPetFiles(e.dataTransfer.files); });
+
+  function addPetFiles(files) {
+    if (petsEmpty) petsEmpty.style.display = 'none';
+    Array.from(files).forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const r = new FileReader();
+      r.onload = e => {
+        const name = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+        const item = document.createElement('div');
+        item.className = 'gal-item';
+        item.innerHTML = `<img src="${e.target.result}" alt="${name}" onclick="openLightbox(this.src)" /><button class="gal-item-remove" onclick="this.parentElement.remove()">&#x2715;</button><div class="gal-item-cap"><div class="gal-item-place">${name}</div><div class="gal-item-note" onclick="editNote(this)">Click to add a note...</div></div>`;
+        petsGrid.appendChild(item);
+      };
+      r.readAsDataURL(file);
+    });
+  }
+
+  function editNote(el) {
+    const note = prompt('Add a thought or memory for this place:');
+    if (note) el.textContent = note;
+  }
+
+  // Photo uploads for timeline sections
+  function triggerPhoto(id) { document.getElementById(id).click(); }
+  function triggerDoc(id) { document.getElementById(id).click(); }
+
+  function handlePhotos(input, previewId) {
+    const container = document.getElementById(previewId);
+    const existing = container.querySelectorAll('.photo-thumb').length;
+    const files = Array.from(input.files).slice(0, Math.max(0, 5 - existing));
+    files.forEach(file => {
+      if (!file.type.startsWith('image/')) return;
+      const r = new FileReader();
+      r.onload = e => {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.className = 'photo-thumb';
+        img.title = 'Click to view';
+        img.onclick = () => openLightbox(e.target.result);
+        container.appendChild(img);
+      };
+      r.readAsDataURL(file);
+    });
+  }
+
+  function handleDocs(input, listId) {
+    const container = document.getElementById(listId);
+    Array.from(input.files).forEach(file => {
+      const pill = document.createElement('div');
+      pill.className = 'doc-pill';
+      pill.title = file.name;
+      if (file.type.startsWith('image/')) {
+        const r = new FileReader();
+        r.onload = e => { pill.innerHTML = `&#128444; ${file.name.substring(0,22)}${file.name.length>22?'...':''}`; pill.onclick = () => openLightbox(e.target.result); };
+        r.readAsDataURL(file);
+      } else {
+        pill.innerHTML = `&#128196; ${file.name.substring(0,22)}${file.name.length>22?'...':''}`;
+        pill.onclick = () => { const url = URL.createObjectURL(file); window.open(url,'_blank'); };
+      }
+      container.appendChild(pill);
+    });
+  }
+</script>
+</body>
+</html>
